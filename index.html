@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales Forecast App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>📊 Sales Forecasting App</h2>
+
+    <form action="/predict" method="post">
+        <input type="number" name="Category" placeholder="Category" required><br>
+        <input type="number" name="DiscountPrice" placeholder="Discount Price" required><br>
+        <input type="number" name="ActualPrice" placeholder="Actual Price" required><br>
+        <input type="number" name="Discount" placeholder="Discount" required><br>
+        <input type="number" name="Rating" placeholder="Rating" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <h3>{{ prediction_text }}</h3>
+</div>
+
+</body>
+</html>
